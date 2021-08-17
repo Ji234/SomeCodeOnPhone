@@ -29,7 +29,8 @@ int main(){
  //strcat1(strname,"www");
  //printf("%s\n",strname);
  //printf("%p,%s",strchr("113322",'a'),strchr("113322",'a'));
- 
+   
+  printf("%p\n%s\n",strrchr("113322",'33'),strchr("113322",'33'));
 }
 
 
@@ -117,5 +118,3 @@ char *strstr1(const char * str, const char *substr){
   }
  return 0;
 }
-
-
