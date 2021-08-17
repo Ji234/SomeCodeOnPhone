@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(){
-
-printf("\a");
+  const int ii=4;
+  printf("%d\n",ii);
 }
 
