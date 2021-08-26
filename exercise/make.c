@@ -14,9 +14,9 @@ int main(int argc ,char *argv[]){
 		if((fp=fopen("makefile","w"))==0) {printf("打开文件失败");return -1;}
 		fprintf(fp,"all:");
 		while(1){
+				//读出目录里的文件来
 				if((stdinfo=readdir(dir))==0) break;
 				if((stdinfo->d_type==8)&&strcmp(stdinfo->d_name+(strlen(stdinfo->d_name)-2),".c")==0){
-						//读出目录里的文件来
 				strncpy(strfilename[i],stdinfo->d_name,strlen(stdinfo->d_name)-2);
 				fprintf(fp,"%s ",strfilename[i]);
 				i++;
