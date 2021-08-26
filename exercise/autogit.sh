@@ -1,3 +1,3 @@
 git add ../
 git commit -m ../
-git push -u lgg7code master 
+git push -u lgg7code  master 
