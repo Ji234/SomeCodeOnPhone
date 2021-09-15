@@ -35,7 +35,7 @@ int main(int argc,char *argv[]){
 	}
 
 	char buffer[1024];
-	for(int ii=0;ii<5;ii++){
+	for(int ii=0;ii<100;ii++){
 		int iret;
 		memset(&servaddr,0,sizeof(servaddr));
 		sprintf(buffer,"this is NO.%d girl num:%d\n",ii+1,ii+1);

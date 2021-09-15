@@ -1,9 +1,16 @@
-all: task14_1 task14_2 test
+all: task14_1 task14_2 test task14_3 task14_4 task14_5 task14_6
 
 clean:
-	rm task14_1 task14_2 test
+	rm task14_1 task14_2 test task14_3 task14_4 task14_5 task14_6
 	
-
+task14_6:task14_6.cpp
+	g++ -g -o task14_6 task14_6.cpp
+task14_5:task14_5.cpp
+	g++ -g -o task14_5 task14_5.cpp
+task14_4:task14_4.cpp
+	g++ -g -o task14_4 task14_4.cpp
+task14_3:task14_3.cpp
+	g++ -g -o task14_3 task14_3.cpp
 test:test.cpp
 	g++ -g -o test test.cpp
 task14_2:task14_2.cpp

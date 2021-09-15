@@ -1,4 +1,3 @@
-//见前面的代码修改一下,能修改的都可以修改一下
 #include <stdio.h>
 #include<sys/types.h>
 #include <netdb.h>
@@ -34,24 +33,30 @@ int main(int argc,char *argv[]){
 		close(sockfd);
 		return -1;
 	}
-
+	
 	char buffer[1024];
-	for(int ii=0;ii<5;ii++){
+	int jj=0;
+	while(1){
 		int iret;
 		memset(&servaddr,0,sizeof(servaddr));
-		sprintf(buffer,"this is NO.%d girl num:%d\n",ii+1,ii+1);
+		//sprintf(buffer,"this is NO.%d girl num:%d\n",ii+1,ii+1);
+		scanf("%s",buffer);
+		//sprintf(buffer,"%d",jj);
+		//jj++;
 		if((iret=send(sockfd,buffer,strlen(buffer),0))<0){
 			perror("send:");
 			break;
 		}
-		printf("send:%s\n",buffer);
+		if(strcmp(buffer,"bye")==0) break;
+		//printf("send:%s\n",buffer);
 		memset(buffer,0,sizeof(buffer));
 
 		if((iret=recv(sockfd,buffer,sizeof(buffer),0))<0){
 			perror("recv:");
 			break;
 		}
-		printf("iret=%d\n",iret); 
+		printf("receive:%s\n",buffer);
+		//printf("iret=%d\n",iret); 
 	}
 	close(sockfd);
 }
