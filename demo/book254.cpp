@@ -1,13 +1,18 @@
-//multiprogramming
+//multiprogramming to show multiprogramming have alone memory to save data
 
 #include <unistd.h>
 #include <stdio.h>
 
+int ii=0;
 void fatherfunction(){
-	printf("i am father progame\n");
+	//printf("i am father progame\n");
+	ii+=20;
+	printf("am father ");
 }
 void childfuction(){
-	printf("i am  child  progame\n");
+	//printf("i am  child  progame\n");
+	ii+=10;
+	printf("am child ");
 }
 
 int main(){
@@ -17,6 +22,6 @@ int main(){
 		fatherfunction();
 	}
 	else childfuction();
-
-	printf("father and child function all will come to there\n");
+	printf("ii=%d\n",ii);
+	//printf("father and child function all will come to there\n");
 }
