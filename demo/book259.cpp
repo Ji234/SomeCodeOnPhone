@@ -27,13 +27,13 @@ bool CSEM::init(key_t key){
 		//if semaphore is not exist build it 
 		if (errno==2){
 			if((sem_id=semget(key,1,0640|IPC_CREAT))==-1){
-				perror("init 1 semget()\n");
+				perror("init failed semget()\n");
 				return false;}
 				//after build,it must init to useful
 				union semun sem_union;
 				sem_union.val=1;
 				if(semctl(sem_id,0,SETVAL,sem_union)<0){
-					perror("init semctl()\n");
+					perror("init semctl() failed \n");
 					return false;}
 				}
 			else {perror("init 2 semget()\n");
@@ -66,7 +66,7 @@ bool CSEM::wait(){
 bool CSEM::post(){
 	struct sembuf sem_b;
 	sem_b.sem_num=0;
-	sem_b.sem_op=-1;
+	sem_b.sem_op=1;
 	sem_b.sem_flg=SEM_UNDO;
 	if(semop(sem_id,&sem_b,1)==-1){
 		perror("post semop()");
@@ -88,7 +88,7 @@ int main(){
 		return -1;
 	}
 	printf("sem wait succese\n");
-	sleep(2);//at the sleep time we can run other 259 application
+	sleep(5);//at the sleep time we can run other 259 application
 //	if(sem.destroy()==false){
 //		printf("sem.destroy failed\n");
 //		return -1;
