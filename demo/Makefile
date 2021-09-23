@@ -1,6 +1,8 @@
 all:book245 book246 book247 book248 book251 book252 book253 book254\
-book250 book249 book255 book258 book259
+book250 book249 book255 book258 book259 book258_1  book258_2  
 
+book258_2:book258_2.cpp
+	g++ -g -o book258_2 book258_2.cpp
 book259:book259.cpp
 	g++ -g -o book259 book259.cpp
 book258:book258.cpp
