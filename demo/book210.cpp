@@ -1,6 +1,6 @@
 //book210.cpp
 //to shw soem feature for class
-//this application's function kile cat
+//this application's function like cat
 #include <stdio.h>
 #include <string.h>
 #include <stdarg.h>
