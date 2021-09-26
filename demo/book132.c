@@ -8,7 +8,7 @@ int main(){
   struct timeval begin,end;//存放开始和结束的时间
   gettimeofday(&begin,0);//计时器开始
   long i,temp;//计算一下后面的这个程序运行了多长时间
-  for(i=0;i<1000000000;i++){
+  for(i=0;i<5000000000;i++){
   temp+=i;
   }
   printf("%ld\n",temp);
