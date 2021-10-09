@@ -1,7 +1,9 @@
 all:book132 book123 book245 book246 book247 book248 book251 book252 book253 book254\
 book250 book249 book255 book258 book259 book258_1  book258_2  book259_1\
-book261
+book261 quine
 
+quine:quine.c
+	g++ -g -o quine quine.c 
 book132:book132.c
 	g++ -g -o book132 book132.c 
 book123:book123.c
